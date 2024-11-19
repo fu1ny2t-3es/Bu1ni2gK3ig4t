@@ -1,9 +1,8 @@
 name: Build BurningKnight
 on:
   push:
-    branches:
-      - release
-      - dev
+  workflow_dispatch:
+
 jobs:
   build:
     name: Build BurningKnight
@@ -20,7 +19,7 @@ jobs:
       #  run: |
       #    MonoGameSetup.exe /S
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@main
       - name: Install NuGet
         shell: powershell
         run: |
@@ -67,14 +66,14 @@ jobs:
           git add *
           git commit -m "Added changes"
           cd $GITHUB_WORKSPACE
-      - name: Push Build to egordorichev/bk_builds
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_KEY }}
-          force: true
-          repository: "egordorichev/bk_builds"
-          directory: "./Desktop/bin/Release/" 
-          branch: "master" 
+#      - name: Push Build to egordorichev/bk_builds
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_KEY }}
+#          force: true
+#          repository: "egordorichev/bk_builds"
+#          directory: "./Desktop/bin/Release/" 
+#          branch: "master" 
 #      - name: Upload Windows Version to Itch
 #        shell: powershell
 #        env:
@@ -99,14 +98,14 @@ jobs:
 #        run: |
 #          ./butler.exe push ./Linux/ egordorichev/bkt:linux
 #          
-#      - name: Upload windows build to linux
-#        uses: actions/upload-artifact@v1
-#        with:
-#          name: Windows
-#          path: Windows
+      - name: Upload windows build to linux
+        uses: actions/upload-artifact@main
+        with:
+          name: Windows
+          path: Windows
 #          
 #      - name: Upload linux build to linux
-#        uses: actions/upload-artifact@v1
+#        uses: actions/upload-artifact@main
 #        with:
 #          name: Linux
 #          path: Linux
