@@ -102,7 +102,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: Windows
-          path: Windows
+          path: Desktop/bin/Release/*
 #          
 #      - name: Upload linux build to linux
 #        uses: actions/upload-artifact@main
