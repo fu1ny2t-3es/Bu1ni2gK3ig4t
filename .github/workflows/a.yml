@@ -8,12 +8,16 @@ jobs:
     name: Build BurningKnight
     runs-on: windows-2019
     steps:
+      - name: Setup .NET 3.x
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '3.1'
+        
       - name: Download MonoGame
         shell: powershell
         run: |
           dotnet --info
           dotnet tool install -g dotnet-mgcb --version 3.8.0.1641
-          winget install Microsoft.DotNet.SDK.3_1
           # wget -O MonoGameSetup.exe https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe
       # - name: Install MonoGame
       #   shell: cmd
