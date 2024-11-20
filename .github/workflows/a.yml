@@ -13,7 +13,7 @@ jobs:
         run: |
           dotnet --info
           dotnet tool install -g dotnet-mgcb --version 3.8.0.1641
-          dotnet tool install -g dotnet --version 3.1.0
+          ./dotnet-install.ps1 -Runtime dotnet -Version 3.1.0
           # wget -O MonoGameSetup.exe https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe
       # - name: Install MonoGame
       #   shell: cmd
