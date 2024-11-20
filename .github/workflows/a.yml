@@ -12,7 +12,7 @@ jobs:
         shell: powershell
         run: |
           dotnet --info
-          dotnet tool install -g dotnet-mgcb::3.8.0.1641
+          dotnet tool install -g dotnet-mgcb::3.8
           # wget -O MonoGameSetup.exe https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe
       # - name: Install MonoGame
       #   shell: cmd
