@@ -13,11 +13,11 @@ jobs:
         run: |
           dotnet --info
           dotnet tool install -g dotnet-mgcb
-      #    wget -O MonoGameSetup.exe https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe
-      #- name: Install MonoGame
-      #  shell: cmd
-      #  run: |
-      #    MonoGameSetup.exe /S
+          wget -O MonoGameSetup.exe https://github.com/MonoGame/MonoGame/releases/download/v3.7/MonoGameSetup.exe
+      - name: Install MonoGame
+        shell: cmd
+        run: |
+          MonoGameSetup.exe /S
       - name: Checkout
         uses: actions/checkout@main
       - name: Install NuGet
