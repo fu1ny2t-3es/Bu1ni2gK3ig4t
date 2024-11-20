@@ -60,7 +60,6 @@ jobs:
           cd $GITHUB_WORKSPACE
           "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current/Bin/MSBuild.exe" ./Lens.sln /property:Configuration=Release
           cd $GITHUB_WORKSPACE/Desktop/bin/Release
-          del *.pdb
           git init
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
